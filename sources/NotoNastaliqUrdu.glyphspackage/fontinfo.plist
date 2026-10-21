@@ -2576,6 +2576,7 @@ lookup Refinements {
 	sub hehgoal-ar.init.meem' meem-ar.fina by hehgoal-ar.init.meemf;
 	sub ain-ar.init' hehgoal-ar.fina by ain-ar.init.outS1;
 	sub hehgoal-ar.init' hehgoal-ar.fina by hehgoal-ar.init.outS1;
+	sub meem-ar.init' hehgoal-ar.fina by meem-ar.init.beh;
 	sub @JEEMi' [hehgoal-ar.fina behDotless-ar.medi.reh] by hah-ar.init.outS1;
 	sub @JEEMi' behDotless-ar.medi.cainN by hah-ar.init;
 	sub [@FEHm]' behDotless-ar.medi.cainN by fehDotless-ar.medi.alef;
@@ -2593,20 +2594,20 @@ lookup RaiseTooth {
 	ignore sub [@SEENi @SEENm] behDotless-ar.medi.fbeh' @BEHm @BEHm;
 	sub [seen-ar.init.fbeh seen-ar.medi.fbeh] behDotless-ar.medi.fbeh' by behDotless-ar.medi.cain;
 
-	# MEEM[im] BEm BE[mf]
-	sub [meem-ar.init.fbeh meem-ar.medi.fbeh] behDotless-ar.medi.fbeh' by behDotless-ar.medi.cain;
-	
-	# KAF/LAM[im] BEm BE[mf]
-	sub [@KAFi @KAFm @LAMi @LAMm] behDotless-ar.medi.fbeh' by behDotless-ar.medi.cain;
+	# MEEM/KAF/LAM/TOE[im] BEm BEm/SIN, but not before a final: میٹ متین کیپ لیپ پلیٹ طیب (#69)
+	ignore sub [meem-ar.init.fbeh meem-ar.medi.fbeh @KAFi @KAFm @LAMi @LAMm] behDotless-ar.medi.fbeh' behDotless-ar.medi.cainN;
+	sub [meem-ar.init.fbeh meem-ar.medi.fbeh @KAFi @KAFm @LAMi @LAMm] behDotless-ar.medi.fbeh' [@BEHm @SEENm seen-ar.fina] by behDotless-ar.medi.cain;
+	sub [tah-ar.init.fbeh] behDotless-ar.medi.fbeh' [@BEHm @SEENm seen-ar.fina] by behDotless-ar.medi.cainwide;
 
+	# SAD/HEHDO/HEH/AIN/FE[im] BEm SIN[mf]: عیش ہنس جیسا (#69)
+	sub [sad-ar.init.fbeh hehDoachashmee-ar.init.fbeh hehgoal-ar.init.fbeh] behDotless-ar.medi.fbeh' [@SEENm seen-ar.fina] by behDotless-ar.medi.cain;
+	sub [ain-ar.init.fbeh fehDotless-ar.init.fbeh] behDotless-ar.medi.fbeh' [@SEENm seen-ar.fina] by behDotless-ar.medi.cainwide;
 
 	# SIN[im] BEm SAD[mf]/TOE[mf]
     sub [seen-ar.init.fbeh seen-ar.medi.fbeh] behDotless-ar.medi.sad' by behDotless-ar.medi.sad.raised;
 
     # SIN[im] BEm FE[mf]
-    sub [seen-ar.init.fbeh seen-ar.medi.fbeh ain-ar.init.fbeh kaf-ar.init.fbeh lam-ar.init.fbeh] behDotless-ar.medi.feh' by behDotless-ar.medi.cain; # XXX
-    
-	sub [tah-ar.init.fbeh] behDotless-ar.medi.fbeh' by behDotless-ar.medi.cainwide;
+    sub [seen-ar.init.fbeh seen-ar.medi.fbeh] behDotless-ar.medi.feh' by behDotless-ar.medi.cain; # XXX
 
     # SIN[im] BEm QAFf/VAOf
     sub [seen-ar.init.fbeh seen-ar.medi.fbeh] behDotless-ar.medi.waw' by behDotless-ar.medi.cain;
@@ -2618,7 +2619,7 @@ lookup RaiseTooth {
 	ignore sub [@JEEMi @JEEMm] behDotless-ar.medi.fbeh' @BEHm @BEHm;
 	sub [@JEEMi @JEEMm] behDotless-ar.medi.fbeh' @BEHm by behDotless-ar.medi.cainwide;
 
-	sub [@JEEMi] behDotless-ar.medi.fbeh' seen-ar.fina by behDotless-ar.medi.cainwide;
+	sub [@JEEMi] behDotless-ar.medi.fbeh' [@SEENm seen-ar.fina] by behDotless-ar.medi.cainwide;
 
 	# Between HEHDO and BEH...
 	sub @HEHDOCHi.m @BEHm' @BEHm by behDotless-ar.medi.cain;
